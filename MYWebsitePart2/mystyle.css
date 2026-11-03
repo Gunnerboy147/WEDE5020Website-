@@ -1,0 +1,175 @@
+/* 
+ * Ponelopele Secondary School - Official Stylesheet
+ * Based on HTML, CSS and JavaScript Beginners Guide
+ */
+
+:root {
+  --school-red: #C8102E;
+  --school-red-dark: #991B1B;
+  --school-dark: #111827;
+  --school-black: #0B0F17;
+  --school-gray-bg: #F9FAFB;
+  --school-card-bg: #FFFFFF;
+  --school-text: #1F2937;
+  --school-border: #E5E7EB;
+  --color-green: #15803D;
+  --color-red: #DC2626;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--school-gray-bg);
+  color: var(--school-text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: var(--school-dark);
+}
+
+/* Links & Hover Effects */
+a {
+  color: var(--school-red);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.school-hover,
+.badge-hover {
+  transition: all 0.25s ease-in-out;
+}
+
+.school-hover:hover,
+.badge-hover:hover,
+button.school-hover:hover,
+a.school-hover:hover {
+  background-color: var(--school-red) !important;
+  color: #FFFFFF !important;
+  border-color: var(--school-red) !important;
+}
+
+.school-hover:hover *,
+.badge-hover:hover * {
+  color: #FFFFFF !important;
+}
+
+/* Page Navigation Display Views */
+.page-view {
+  display: none;
+}
+
+.page-view.active-page {
+  display: block;
+}
+
+/* Hero Slideshow Styling */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, transform 1s ease-out;
+  transform: scale(1.02);
+}
+
+.hero-slide.active-slide {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 10;
+}
+
+/* Interactive Educational Class Boxes */
+.class-box-interactive-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.25s ease, color 0.25s ease;
+  background-color: #FFFFFF;
+  border: 2px solid var(--school-border);
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.class-box-interactive-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--school-red) !important;
+  color: #FFFFFF !important;
+  border-color: var(--school-red) !important;
+  box-shadow: 0 20px 25px -5px rgba(200, 16, 46, 0.25);
+}
+
+.class-box-interactive-card:hover * {
+  color: #FFFFFF !important;
+}
+
+/* Images Responsive & Fallback */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Learner ID Checker Results Formatting */
+.id-status-found {
+  color: #15803D !important;
+  font-weight: 800;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.id-status-notfound {
+  color: #DC2626 !important;
+  font-weight: 800;
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.id-result-passed {
+  color: #15803D !important;
+  font-weight: 800;
+}
+
+.id-result-failed {
+  color: #DC2626 !important;
+  font-weight: 800;
+}
+
+/* Accordion and Tabs */
+.tab-active {
+  background-color: var(--school-red) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-overlay.hidden {
+  display: none !important;
+}
